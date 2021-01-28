@@ -1,9 +1,16 @@
 from django.shortcuts import render,redirect
 from django.http import HttpResponse,Http404
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.views import LogoutView
+from django.contrib.auth import login
 from .models import Author,Picture,Category,Location
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.views import LogoutView
+from django import forms
+from django.template import Context
 
 # Create your views here.
-
+@login_required(login_url='/accounts/login')
 def pics(request):
     category = Category.get_categories()
     pictures = Picture.all_pics()
@@ -11,6 +18,15 @@ def pics(request):
 
     return render(request,'pics.html',{'pictures': pictures, 'category': category, 'location_pics':location_pics })
 
+def register(request):
+   if request.method == 'POST':
+       form = UserCreationForm(request.POST)
+       if form.is_valid():
+           form.save()
+       return redirect('login')
+   else:
+       form = UserCreationForm()
+   return render(request, 'register.html', locals())
 
 def single_pic(request,id):
     try:

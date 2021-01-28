@@ -25,7 +25,7 @@ SECRET_KEY = '6ir!vrvp88+ua%@mk+=!2^oe@u^o@ya#!)qykk8@g72u1)0zvd'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -39,6 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'flashapp',
     'bootstrap3',
+    'rest_framework.authtoken',
+    'crispy_forms',
+                                                                                                                
 ]
 
 MIDDLEWARE = [
@@ -102,6 +105,18 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+
+
+REST_FRAMEWORK = {
+   'DEFAULT_AUTHENTICATION_CLASSES': (
+       'rest_framework.authentication.TokenAuthentication',
+   )
+}
+
+
+LOGIN_REDIRECT_URL = 'pics'
+LOGIN_REDIRECT_URL = 'logout'
+
 
 
 # Internationalization
