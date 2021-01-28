@@ -2,9 +2,10 @@
 <!-- Filter function for Category -->
 <main class="wrapper">
     <section class="section1">
-        <h1>FLASHCARDS</h1>
-        <p style="padding-bottom: 80px;">POST AND LEARN</p>
-
+        <div class="kip">
+            <h1>FLASHCARDS</h1>
+            <p style="padding-bottom: 80px;">POST AND LEARN</p>
+        </div>
         <div class="row">
             <div class="col-md-3 col-sm-3 "></div>
             <div class="col-md-3 col-sm-3 col-xs-6">
@@ -20,7 +21,7 @@
             <!-- Scripts for category filter functions -->
             <script>
                 /* When the user clicks on the button, 
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                toggle between hiding and showing the dropdown content */
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    toggle between hiding and showing the dropdown content */
                 function myFunction1() {
                     document.getElementById("myDropdown").classList.toggle("show");
                 }
@@ -209,7 +210,7 @@
     }
     
     .modal-content {
-        background-image: url();
+        background-image: url('https://images.pexels.com/photos/5709005/pexels-photo-5709005.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500');
         background-position: center;
         background-attachment: scroll;
         background-size: cover;
@@ -217,20 +218,16 @@
     }
     
     .wrapper {
-        background-image: url();
-        height: 90vh;
-        background-position: center;
+        background-image: url('https://images.pexels.com/photos/5485986/pexels-photo-5485986.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+        height: 88vh;
+        /* background-position: center; */
         background-size: cover;
         background-repeat: no-repeat;
-        text-align: center;
-        padding-top: 10%;
+        padding-top: 15%;
     }
-    /* body {
-        background-image: url("https://images.pexels.com/photos/3690510/pexels-photo-3690510.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
-        background-position: center;
-        background-attachment: scroll;
-        background-size: cover;
-        background-repeat: no-repeat;
-    } */
+    
+    .kip {
+        margin-left: 400px;
+    }
 </style>
 {% endblock %}
