@@ -3,7 +3,7 @@
 [Philipia eveline](https://github.com/philipiaeveline/Flashcard/tree/ft_models)  
   
 # Description  
-This website will allow to post,comment and search urls like your previous projects also you can like or dislike.
+This a website that allows user to login , read and share flashcards of their preferred category. The website also allows user to search a single post by article name.
 ##  Live Link  
  Click [View Site]()  to visit the site
  
