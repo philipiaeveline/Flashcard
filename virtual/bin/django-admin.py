@@ -1,4 +1,4 @@
-#!/home/moringa/Desktop/flashcard2/virtual/bin/python
+#!/home/moringa/Documents/Flashcard/virtual/bin/python
 # When the django-admin.py deprecation ends, remove this script.
 import warnings
 

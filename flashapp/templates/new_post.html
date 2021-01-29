@@ -1,8 +1,8 @@
 {% extends 'base.html' %} {% load bootstrap4 %} {% block content %}
 <div class="container">
     <div class="row">
-        <div class="col-md-2"></div>
-        <div class="col-md-8">
+
+        <div class="col-md-6">
             <div class="card bg-transparent">
                 <div class="card-header">
                     <h3><b><u>Post on your timeline</u></b></h3>
@@ -15,7 +15,16 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-2"></div>
+        <div class="col-md-6"></div>
     </div>
 </div>
+<style>
+    body {
+        background-image: url('https://images.pexels.com/photos/5485986/pexels-photo-5485986.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+        height: 88vh;
+        /* background-position: center; */
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+</style>
 {% endblock content %}

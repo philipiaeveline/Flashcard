@@ -30,9 +30,9 @@
                         </div>
                         <div class="modal-footer">
                             <p>{{pic.author}}</p>
-                            <a href="{{pic.image.url }}"> <input class="form-control" type="text" value="{{ pic.image.url }}" id="link"></a>
-                            <a onclick="myFunction()"><button type="button" class="btn btn-outline-success">Copy
-                                Link</button></a>
+                            <h4>{{pic.pub_date}}</h4>
+
+
                             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                         </div>
                     </div>
@@ -47,12 +47,11 @@
     </div>
     <style>
         body {
-            background-image: url();
-            height: 90vh;
-            background-position: center;
+            background-image: url('https://images.pexels.com/photos/5485986/pexels-photo-5485986.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+            height: 88vh;
+            /* background-position: center; */
             background-size: cover;
             background-repeat: no-repeat;
-            text-align: center;
         }
         
         .modal {
