@@ -1,0 +1,61 @@
+{% extends 'base.html' %} {% block content %} {% block super %}
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"> {% endblock %}
+<div class="container">
+    {% for pic in photos %}
+    <div class="row">
+        <div class="col-md-4">
+            <h1> {{pic.name}} </h1>
+            <h2> {{pic.description}} </h2>
+
+            <button type="button" class="btn btn-styled" data-toggle="modal" data-target="#myModal{{pic.id}}">
+            <img width="400px" src=" {{pic.image.url}} " class="img-responsive" alt="one pic image">
+            <a class="btn btn-success" href="/single_pic/{{pic.id}} ">More</a> 
+        </div>
+        
+    </div>
+        
+        </button> <br> {% endfor %} {% for pic in photos %}
+            <div class="modal fade" id="myModal{{pic.id}}" role="dialog">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h1 class="modal-title">{{pic.name}}</h1>
+                        </div>
+                        <div class="modal-body">
+                            <img width="400px" class="img-responsive" src=" {{pic.image.url}} " alt="img">
+                            <p>{{pic.description}}</p>
+                            <p>category:{{pic.category}}</p>
+                            <p>Location: {{pic.location}} </p>
+                        </div>
+                        <div class="modal-footer">
+                            <p>{{pic.author}}</p>
+                            <h4>{{pic.pub_date}}</h4>
+
+
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+        {% endfor %}
+
+    </div>
+    <style>
+        body {
+            background-image: url('https://images.pexels.com/photos/5485986/pexels-photo-5485986.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+            height: 88vh;
+            /* background-position: center; */
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        
+        .modal {
+            color: black;
+        }
+    </style>
+    {% endblock %}

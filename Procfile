@@ -1,0 +1,1 @@
+web: gunicorn flashpro.wsgi --log-file -

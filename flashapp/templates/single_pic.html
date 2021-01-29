@@ -1,0 +1,48 @@
+{% extends 'base.html' %} {% block content %}
+<div class="container">
+
+
+    <div class="row">
+        <div class="col-md-4">
+            <div class="jumbotron">
+
+                <div class="card" style="width: 18rem;">
+                    <h3 class="card-title">{{pic.name}}</h3>
+                    <img class="card-img-top" src="{{pic.image.url}}" alt="Card image cap" width="400px">
+                    <div class="card-body">
+
+                        <p class="card-text ">DESCRIPTIONS :{{pic.description}}</p>
+                        <h4 class="card-title">Category: {{pic.category}}</h4>
+                        <h4 class="card-title">Author: {{pic.author}}</h4>
+                        <h4 class="card-footer">LOCATION :{{pic.location}}</h4>
+                        <h4 class="card-footer">POSTED ON :{{pic.pub_date}}</h4>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+</div>
+<style>
+    body {
+        background-image: url('https://images.pexels.com/photos/5485986/pexels-photo-5485986.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+        height: 88vh;
+        /* background-position: center; */
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    
+    .jumbotron {
+        width: 520px;
+        background-color: rgba(18, 23, 32, 0.8);
+        color: #fff;
+    }
+    
+    .card {
+        display: grid;
+    }
+</style>{% endblock %}
