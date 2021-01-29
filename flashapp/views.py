@@ -1,7 +1,10 @@
 from django.shortcuts import render,redirect,get_object_or_404
 from django.http import HttpResponse,Http404
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.views import LogoutView
+from django.contrib.auth import login
 from .models import Author,Picture,Category,Location
-from .forms import SignUpForm,NewPostForm
+from .forms import SignUpForm,NewPostForm,EditProfileForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout
 from django.contrib.auth.models import User
@@ -31,6 +34,24 @@ def pics(request):
 def profile(request):
     user_posts = Picture.user_pics(request.user)
     return render(request,'profile.html',{'user_posts':user_posts})
+
+@login_required(login_url = '/accounts/login/')
+def edit_profile(request):
+
+    if request.method=='POST':
+        form = EditProfileForm(request.POST,request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect('profile')
+
+    else:
+        form = EditProfileForm(instance=request.user)
+    return render(request,'update_profile.html',{'form':form})
+
+
+
+
+
 @login_required(login_url = '/accounts/login/')
 def single_pic(request,id):
     try:
@@ -75,3 +96,18 @@ def viewPics_by_category(request,category):
 def logout_request(request):
     logout(request)
     return redirect('pics')
+
+
+
+@login_required(login_url = '/accounts/login/')
+def search_results(request):
+    if 'image' in request.GET and request.GET['image']:
+        search_term = request.GET.get('image')
+        searched_pics = Picture.search_image(search_term)
+        message = f'{search_term}'
+
+        return render(request,'search.html',{'message':message,'image':searched_pics})
+
+    else:
+        message = "You have not entered anything to search"
+        return render(request,'search.html',{"message":message})
